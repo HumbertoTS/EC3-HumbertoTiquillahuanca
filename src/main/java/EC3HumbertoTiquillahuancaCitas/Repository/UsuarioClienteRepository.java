@@ -8,4 +8,6 @@ import EC3HumbertoTiquillahuancaCitas.Model.UsuarioCliente;
 @Repository
 public interface UsuarioClienteRepository extends JpaRepository<UsuarioCliente, Integer>{
 
+	UsuarioCliente findByUsuario(String usuario);
+	
 }

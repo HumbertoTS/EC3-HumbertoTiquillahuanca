@@ -1,9 +1,12 @@
 package EC3HumbertoTiquillahuancaCitas.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,13 @@ public class UsuarioCliente {
 	private String usuario;
 	private String password;
 	private String rol;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_cliente", 
+				nullable = false, 
+				unique = true, 
+				foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (id_cliente) references cliente(id_cliente)"))
+	public Cliente cliente;
 	
 	
 	public Integer getIdUsuario() {
