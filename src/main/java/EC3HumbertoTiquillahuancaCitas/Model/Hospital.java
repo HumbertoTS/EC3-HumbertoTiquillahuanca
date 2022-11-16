@@ -1,9 +1,14 @@
 package EC3HumbertoTiquillahuancaCitas.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +22,9 @@ public class Hospital {
 	private String descripcion;
 	private String distrito;
 	
+	//Modelo Cliente
+		@ManyToMany(mappedBy = "hospital", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+		private List<Cliente> cliente = new ArrayList<>();
 	
 	public Integer getIdHospital() {
 		return idHospital;
