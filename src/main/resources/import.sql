@@ -1,0 +1,3 @@
+insert into usuariocliente (id_usuario, usuario, password, rol, id_cliente) values (1, 'admin','$2a$12$kmSlKjoEieb5vPiUlasgRuECwDse1ohzaYLfcLUeKAP8wbcbmH0Cm','Usuario',1);
+insert into usuariocliente (id_usuario, usuario, password, rol, id_cliente) values (2, 'usuario','$2a$12$hPYEUwThrT/xuUptvggrj.THrPZr6dExGVNkKLsZMTFAJhRnKRH7e','Usuario',1);
+insert into usuariocliente (id_usuario, usuario, password, rol, id_cliente) values (3, 'prueba','$2a$12$cRRAuNWAdecanUU2kEjLbOPau503NYJAJN0mYdGfl3iWKQ672a1fq','Usuario',1);

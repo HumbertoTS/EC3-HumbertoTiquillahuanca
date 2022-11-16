@@ -45,8 +45,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
 		clients.inMemory()
-			.withClient("queridoprofesor")
-			.secret(new BCryptPasswordEncoder().encode("queridoprofesor"))
+			.withClient("prueba")
+			.secret(new BCryptPasswordEncoder().encode("123456"))
 			.authorizedGrantTypes("password", "authorization_code", "refresh_token")
 			.scopes("read","write","trust")
 			.accessTokenValiditySeconds(1*60*60)
@@ -63,8 +63,8 @@ public class AuthorizationConfig extends AuthorizationServerConfigurerAdapter {
 			public OAuth2AccessToken enhance(OAuth2AccessToken accessToken, OAuth2Authentication authentication) {
 				
 				Map<String, Object> informacionAdicional =  new HashMap<>();
-				informacionAdicional.put("suscribete", "a mi canal");
-				informacionAdicional.put("profesor", "Wilder");
+				informacionAdicional.put("Prueba", "prueba 1");
+				informacionAdicional.put("Prueba2", "Prueba2");
 				
 				DefaultOAuth2AccessToken token = new DefaultOAuth2AccessToken(accessToken);
 				token.setAdditionalInformation(informacionAdicional);

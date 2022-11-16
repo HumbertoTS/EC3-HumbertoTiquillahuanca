@@ -45,10 +45,6 @@ public class ConfigSecurity extends WebSecurityConfigurerAdapter{
 		return new BCryptPasswordEncoder();
 	}
 
-//	@Bean
-//	public TokenStore tokenStore() {
-//		return new InMemoryTokenStore();
-//	}
 	
 	@Bean
 	public JwtAccessTokenConverter accessTokenConverter() {

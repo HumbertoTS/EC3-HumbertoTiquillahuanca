@@ -12,48 +12,49 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "usuariocliente")
 public class UsuarioCliente {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idUsuario;
 	private String usuario;
 	private String password;
 	private String rol;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "id_cliente", 
-				nullable = false, 
-				unique = true, 
-				foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (id_cliente) references cliente(id_cliente)"))
+
+	@JoinColumn(name = "id_cliente", nullable = false, unique = true, foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key (id_cliente) references cliente(id_cliente)"))
 	public Cliente cliente;
-	
-	
+
 	public Integer getIdUsuario() {
 		return idUsuario;
 	}
+
 	public void setIdUsuario(Integer idUsuario) {
 		this.idUsuario = idUsuario;
 	}
+
 	public String getUsuario() {
 		return usuario;
 	}
+
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getRol() {
 		return rol;
 	}
+
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
-	
-	
-	
 
 }
